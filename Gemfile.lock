@@ -1,0 +1,241 @@
+GIT
+  remote: git://github.com/nightsailer/padrino-sprockets.git
+  revision: be98d83d8e7dd4da25d20a84ca12135ddf4994a2
+  specs:
+    padrino-sprockets (0.0.3)
+      sprockets
+
+GIT
+  remote: https://github.com/nukah/citadel.git
+  revision: deef881fe09436fd3860813a9433a72036790703
+  specs:
+    citadel (0.2.0)
+      net-ldap
+
+GIT
+  remote: https://github.com/padrino/padrino-framework.git
+  revision: a87c3250977d00a35395c0250794762cb138a068
+  specs:
+    padrino (0.11.3)
+      padrino-admin (= 0.11.3)
+      padrino-cache (= 0.11.3)
+      padrino-core (= 0.11.3)
+      padrino-gen (= 0.11.3)
+      padrino-helpers (= 0.11.3)
+      padrino-mailer (= 0.11.3)
+    padrino-admin (0.11.3)
+      padrino-core (= 0.11.3)
+      padrino-helpers (= 0.11.3)
+    padrino-cache (0.11.3)
+      padrino-core (= 0.11.3)
+      padrino-helpers (= 0.11.3)
+    padrino-core (0.11.3)
+      activesupport (>= 3.1, < 4.0)
+      http_router (~> 0.11.0)
+      rack-protection (>= 1.5.0)
+      sinatra (~> 1.4.2)
+      thor (~> 0.17.0)
+      tilt (~> 1.4.0)
+    padrino-gen (0.11.3)
+      bundler (~> 1.0)
+      padrino-core (= 0.11.3)
+    padrino-helpers (0.11.3)
+      i18n (~> 0.6)
+      padrino-core (= 0.11.3)
+    padrino-mailer (0.11.3)
+      mail (~> 2.5.3)
+      padrino-core (= 0.11.3)
+
+GIT
+  remote: https://github.com/seamusabshere/remote_table
+  revision: e6f874893af5800e377888997ff04c1b58a5bf08
+  specs:
+    remote_table (2.1.1)
+      activesupport (>= 2.3.4)
+      fastercsv (>= 1.5.0)
+      fixed_width-multibyte (>= 0.2.3)
+      hash_digest
+      i18n
+      roo (>= 1.11)
+      unix_utils (>= 0.0.8)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    activemodel (3.2.14)
+      activesupport (= 3.2.14)
+      builder (~> 3.0.0)
+    activesupport (3.2.14)
+      i18n (~> 0.6, >= 0.6.4)
+      multi_json (~> 1.0)
+    barista (1.3.0)
+      coffee-script (~> 2.2)
+    bcrypt-ruby (3.1.2)
+    builder (3.0.4)
+    coderay (1.0.9)
+    coffee-script (2.2.0)
+      coffee-script-source
+      execjs
+    coffee-script-source (1.6.3)
+    daemons (1.1.9)
+    diff-lcs (1.2.4)
+    eventmachine (1.0.3)
+    execjs (2.0.1)
+    fastercsv (1.5.5)
+    ffi (1.9.0)
+    fixed_width-multibyte (0.2.3)
+      activesupport
+    formatador (0.2.4)
+    given_core (3.1.1)
+      sorcerer (>= 0.3.7)
+    growl (1.0.3)
+    guard (1.8.2)
+      formatador (>= 0.2.4)
+      listen (>= 1.0.0)
+      lumberjack (>= 1.0.2)
+      pry (>= 0.9.10)
+      thor (>= 0.14.6)
+    guard-jasmine-headless-webkit (0.4.0.rc1)
+      guard (>= 0.4.0)
+      jasmine-headless-webkit (>= 0.7.0)
+    guard-rspec (3.0.3)
+      guard (>= 1.8)
+      rspec (~> 2.13)
+    haml (4.0.3)
+      tilt
+    hash_digest (1.0.0)
+      activesupport
+    hike (1.2.3)
+    http_router (0.11.0)
+      rack (>= 1.0.0)
+      url_mount (~> 0.2.1)
+    i18n (0.6.5)
+    jasmine-core (1.3.1)
+    jasmine-headless-webkit (0.9.0.rc.2)
+      coffee-script
+      jasmine-core
+      multi_json (>= 1.2.0)
+      rainbow
+      sprockets
+      sprockets-vendor_gems
+    ladle (0.2.0)
+      open4 (~> 1.0.0)
+    listen (1.3.1)
+      rb-fsevent (>= 0.9.3)
+      rb-inotify (>= 0.9)
+      rb-kqueue (>= 0.2)
+    lumberjack (1.0.4)
+    mail (2.5.4)
+      mime-types (~> 1.16)
+      treetop (~> 1.4.8)
+    method_source (0.8.2)
+    mime-types (1.25)
+    mini_portile (0.5.1)
+    mongoid (3.1.4)
+      activemodel (~> 3.2)
+      moped (~> 1.4)
+      origin (~> 1.0)
+      tzinfo (~> 0.3.22)
+    moped (1.5.1)
+    multi_json (1.8.0)
+    net-ldap (0.3.1)
+    nokogiri (1.6.0)
+      mini_portile (~> 0.5.0)
+    oj (2.1.4)
+    open4 (1.0.1)
+    origin (1.1.0)
+    polyglot (0.3.3)
+    pry (0.9.12.2)
+      coderay (~> 1.0.5)
+      method_source (~> 0.8)
+      slop (~> 3.4)
+    rack (1.5.2)
+    rack-protection (1.5.0)
+      rack
+    rack-test (0.6.2)
+      rack (>= 1.0)
+    rainbow (1.1.4)
+    rake (10.1.0)
+    rb-fsevent (0.9.3)
+    rb-inotify (0.9.1)
+      ffi (>= 0.5.0)
+    rb-kqueue (0.2.0)
+      ffi (>= 0.5.0)
+    roo (1.12.1)
+      nokogiri
+      rubyzip
+      spreadsheet (> 0.6.4)
+    rspec (2.14.1)
+      rspec-core (~> 2.14.0)
+      rspec-expectations (~> 2.14.0)
+      rspec-mocks (~> 2.14.0)
+    rspec-core (2.14.5)
+    rspec-expectations (2.14.2)
+      diff-lcs (>= 1.1.3, < 2.0)
+    rspec-given (3.1.1)
+      given_core (= 3.1.1)
+      rspec (>= 2.12)
+    rspec-mocks (2.14.3)
+    ruby-ole (1.2.11.7)
+    rubyzip (0.9.9)
+    shotgun (0.9)
+      rack (>= 1.0)
+    sinatra (1.4.3)
+      rack (~> 1.4)
+      rack-protection (~> 1.4)
+      tilt (~> 1.3, >= 1.3.4)
+    slop (3.4.6)
+    sorcerer (1.0.2)
+    spreadsheet (0.8.9)
+      ruby-ole (>= 1.0)
+    sprockets (2.10.0)
+      hike (~> 1.2)
+      multi_json (~> 1.0)
+      rack (~> 1.0)
+      tilt (~> 1.1, != 1.3.0)
+    sprockets-vendor_gems (0.1.3)
+      sprockets
+    thin (1.5.1)
+      daemons (>= 1.0.9)
+      eventmachine (>= 0.12.6)
+      rack (>= 1.0.0)
+    thor (0.17.0)
+    tilt (1.4.1)
+    treetop (1.4.15)
+      polyglot
+      polyglot (>= 0.3.1)
+    tzinfo (0.3.37)
+    unix_utils (0.0.15)
+    url_mount (0.2.1)
+      rack
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  barista
+  bcrypt-ruby
+  citadel!
+  coffee-script
+  execjs
+  growl
+  guard
+  guard-jasmine-headless-webkit (~> 0.4.0.rc1)
+  guard-rspec
+  haml
+  jasmine-headless-webkit (~> 0.9.0.rc1)
+  ladle
+  mongoid (= 3.1.4)
+  oj
+  padrino!
+  padrino-sprockets!
+  rack-test
+  rake
+  rb-fsevent
+  remote_table!
+  rspec
+  rspec-given
+  rubyzip (< 1.0.0)
+  shotgun
+  thin
+  tilt

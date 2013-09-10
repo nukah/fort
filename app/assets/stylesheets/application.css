@@ -1,0 +1,10 @@
+/*
+*= require_self
+*= require_tree .
+*/
+span.department {
+  color: blue;
+}
+/*span.department .first:after, .middle:after {
+  content: " » ";
+}*/

@@ -1,0 +1,55 @@
+- error = @record.errors.include?(:dn)
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :dn, :class => 'control-label'
+  .controls
+    =f.text_field :dn, :class => 'input-xlarge input-with-feedback', :autofocus => true
+    %span.help-inline=error ? f.error_message_on(:dn, :class => 'text-error') : pat(:example)
+- error = @record.errors.include?(:name)
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :name, :class => 'control-label'
+  .controls
+    =f.text_field :name, :class => 'input-xlarge input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:name, :class => 'text-error') : pat(:example)
+- error = @record.errors.include?(:mail)
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :mail, :class => 'control-label'
+  .controls
+    =f.text_field :mail, :class => 'input-xlarge input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:mail, :class => 'text-error') : pat(:example)
+- error = @record.errors.include?(:departments)
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :departments, :class => 'control-label'
+  .controls
+    =f.text_field :departments, :class => 'input-xlarge input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:departments, :class => 'text-error') : pat(:example)
+- error = @record.errors.include?(:phone)
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :phone, :class => 'control-label'
+  .controls
+    =f.text_field :phone, :class => 'input-xlarge input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:phone, :class => 'text-error') : pat(:example)
+- error = @record.errors.include?(:title)
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :title, :class => 'control-label'
+  .controls
+    =f.text_field :title, :class => 'input-xlarge input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:title, :class => 'text-error') : pat(:example)
+- error = @record.errors.include?(:mobile)
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :mobile, :class => 'control-label'
+  .controls
+    =f.text_field :mobile, :class => 'input-xlarge input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:mobile, :class => 'text-error') : pat(:example)
+- error = @record.errors.include?(:active)
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :active, :class => 'control-label'
+  .controls
+    =f.check_box :active, :class => 'input-xlarge input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:active, :class => 'text-error') : pat(:example)
+
+.form-actions
+  =f.submit pat(:save), :class => 'btn btn-primary'
+  &nbsp;
+  =f.submit pat(:save_and_continue), :class => 'btn btn-info', :name => 'save_and_continue'
+  &nbsp;
+  =link_to pat(:cancel), url(:records, :index), :class => 'btn'
