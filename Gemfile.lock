@@ -7,9 +7,9 @@ GIT
 
 GIT
   remote: https://github.com/nukah/citadel.git
-  revision: deef881fe09436fd3860813a9433a72036790703
+  revision: 85a30fe22fd851fdc1bee65c40111358cf94dafa
   specs:
-    citadel (0.2.0)
+    citadel (2.1.0)
       net-ldap
 
 GIT

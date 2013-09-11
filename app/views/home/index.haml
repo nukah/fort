@@ -3,7 +3,10 @@
     %button.btn.btn-sm.btn-warning(ng-click="clearQuery()")
       %span.glyphicon.glyphicon-remove
       %span Показать всех
-    %button.btn.btn-sm.btn-info.pull-right(ng-click="location.href='/admin'")
+    %span#heading
+      %img.img-rounded(src="assets/phone-icon.png")
+      %span Primepress Directory
+    %a.btn.btn-sm.btn-info.pull-right(href="/admin")
       %span Панель управления
       %span.glyphicon.glyphicon-log-in
   %div.panel-body
@@ -16,8 +19,8 @@
               %input.form-control(ng-model="search.name" placeholder="Имя")
           %th
             %div.input-group
-              %span.input-group-addon.glyphicon.glyphicon-sort(ng-click="sorter = 'departments'; reverse=!reverse")
-              %input.form-control(ng-model="search.departments" placeholder="Отдел")
+              %span.input-group-addon.glyphicon.glyphicon-sort(ng-click="sorter = 'department'; reverse=!reverse")
+              %input.form-control(ng-model="search.department" placeholder="Отдел")
           %th
             %div.input-group
               %span.input-group-addon.glyphicon.glyphicon-sort(ng-click="sorter = 'title'; reverse=!reverse")
@@ -39,9 +42,7 @@
           %td
             {{record.name}}
           %td
-            %span(ng-repeat="department in record.departments" class="department")
-              %span(ng-class="{first: $first, middle: $middle}")
-                %a(ng-click="departments_filter.departments = department" href="#") {{department}}
+            %a(ng-click="departments_filter.department = record.department" href="#") {{ record.department}}
           %td
             {{record.title}}
           %td

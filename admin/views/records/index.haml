@@ -26,9 +26,6 @@
                       =hidden_field_tag :record_ids, :'data-delete-many-ids' => true
                       =submit_tag pat(:delete), :class =>'list-menu-popover-delete-selected-btn btn btn-danger btn-small'
                       .btn.btn-small.cancel=pat(:cancel)
-        %th.header= mat(:record, :created_at)
-        %th.header= mat(:record, :updated_at)
-        %th.header= mat(:record, :dn)
         %th.header= mat(:record, :name)
         %th.header= mat(:record, :mail)
         %th.header= mat(:record, :departments)
@@ -43,20 +40,22 @@
         %tr.list-row
           %td.list-column.list-selectable
             =check_box_tag 'record_ids[]', :value => record.id, :class => 'list-selectable-checkbox'
-          %td.list-column=time_ago_in_words record.created_at
-          %td.list-column=time_ago_in_words record.updated_at
-          %td.list-column=record.dn
           %td.list-column=record.name
           %td.list-column=record.mail
-          %td.list-column=record.departments
+          %td.list-column
+            - record.departments.each do |dep|
+              %span
+                = dep
           %td.list-column=record.phone
           %td.list-column=record.title
           %td.list-column=record.mobile
-          %td.list-column=record.active
+          %td.list-column
+            - if record.active
+              %span.glyphicon.glyphicon-ok.pull-right
           %td.list-column.list-row-action
             .list-row-action-wrapper
-              =link_to tag_icon(:edit), :href => url(:records, :edit, :id => record.id), :rel => :tooltip, :title => "#{pat(:edit)} record", :class => 'list-row-action-wrapper-link'
-              =link_to tag_icon(:trash), :rel => :tooltip, :title => "#{pat(:delete)} record", :class => 'list-row-action-delete-one list-row-action-wrapper-link'
+              =link_to tag_icon(:edit), :href => url(:records, :edit, :id => record.id), :rel => :tooltip, :title => "#{pat(:edit)} record", :class => 'list-row-action-wrapper-link glyphicon glyphicon-edit'
+              =link_to tag_icon(:trash), :rel => :tooltip, :title => "#{pat(:delete)} record", :class => 'list-row-action-delete-one list-row-action-wrapper-link glyphicon glyphicon-remove'
               .popover.list-row-action-popover-delete-one.left
                 .arrow
                 %h3.popover-title=pat(:delete, :model => "record")

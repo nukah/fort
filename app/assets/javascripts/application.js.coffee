@@ -5,7 +5,7 @@
 @app = angular.module("application", [])
 @RecordListController = ($scope, $http) ->
   $scope.departments_filter = {}
-  $scope.sorter = 'departments'
+  $scope.sorter = 'department'
   $http.get('/data.json').success( (data) ->
     $scope.records = data
   )

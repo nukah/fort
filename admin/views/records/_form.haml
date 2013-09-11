@@ -1,9 +1,3 @@
-- error = @record.errors.include?(:dn)
-%fieldset.control-group{:class => error ? 'has-error' : ''}
-  =f.label :dn, :class => 'control-label'
-  .controls
-    =f.text_field :dn, :class => 'input-xlarge input-with-feedback', :autofocus => true
-    %span.help-inline=error ? f.error_message_on(:dn, :class => 'text-error') : pat(:example)
 - error = @record.errors.include?(:name)
 %fieldset.control-group{:class => error ? 'has-error' : ''}
   =f.label :name, :class => 'control-label'
@@ -16,12 +10,12 @@
   .controls
     =f.text_field :mail, :class => 'input-xlarge input-with-feedback'
     %span.help-inline=error ? f.error_message_on(:mail, :class => 'text-error') : pat(:example)
-- error = @record.errors.include?(:departments)
+- error = @record.errors.include?(:department)
 %fieldset.control-group{:class => error ? 'has-error' : ''}
-  =f.label :departments, :class => 'control-label'
+  =f.label :department, :class => 'control-label'
   .controls
-    =f.text_field :departments, :class => 'input-xlarge input-with-feedback'
-    %span.help-inline=error ? f.error_message_on(:departments, :class => 'text-error') : pat(:example)
+    =f.text_field :department, :class => 'input-xlarge input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:department, :class => 'text-error') : pat(:example)
 - error = @record.errors.include?(:phone)
 %fieldset.control-group{:class => error ? 'has-error' : ''}
   =f.label :phone, :class => 'control-label'

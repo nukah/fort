@@ -11,6 +11,8 @@ Bundler.require(:default, PADRINO_ENV)
 # Add here your before load hooks
 #
 Padrino.before_load do
+  I18n.locale = :ru
+  I18n.default_locale = :ru
 end
 
 ##
