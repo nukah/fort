@@ -5,6 +5,9 @@
 span.department {
   color: blue;
 }
+#heading {
+  font-size: 24px;
+}
 /*span.department .first:after, .middle:after {
   content: " » ";
 }*/

@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 # Project requirements
 gem 'rake'
@@ -13,6 +13,8 @@ gem 'barista'
 gem 'execjs'
 gem 'tilt'
 gem 'padrino-sprockets', :require => ['padrino/sprockets'], :git => 'git://github.com/nightsailer/padrino-sprockets.git'
+gem 'therubyracer'
+gem 'puma'
 
 # Padrino
 gem 'padrino', git: "https://github.com/padrino/padrino-framework.git"
