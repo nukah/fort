@@ -6,7 +6,7 @@ Application::Fortification.controllers :home do
   get :data, map: '/data.json', :provides => :json do
     content_type :json
     records = Record.where(active: true).map { |record|
-      record.serializable_hash(only: [:name, :mail, :title, :phone, :department])
+      record.serializable_hash(only: [:ident, :birthdate, :name, :mail, :title, :phone, :department])
     }
     records.to_json
   end

@@ -1,18 +1,21 @@
 %div.panel.panel-info(ng-controller="RecordListController")
   %div.panel-heading
+    %img.img-rounded(src="assets/phone-icon.png")
     %button.btn.btn-sm.btn-warning(ng-click="clearQuery()")
       %span.glyphicon.glyphicon-remove
       %span Показать всех
-    %span#heading
-      %img.img-rounded(src="assets/phone-icon.png")
-      %span Primepress Directory
-    %a.btn.btn-sm.btn-info.pull-right(href="/admin")
+    %a.btn.btn-sm.btn-info(href="/admin")
       %span Панель управления
       %span.glyphicon.glyphicon-log-in
+    %span#heading.pull-right
+      %span Primepress Directory
+
   %div.panel-body
     %table.table.table-striped
       %thead
         %tr
+          %th
+            %div
           %th
             %div.input-group
               %span.input-group-addon.glyphicon.glyphicon-sort(ng-click="sorter = 'name'; reverse=!reverse")
@@ -40,7 +43,11 @@
       %tbody
         %tr(ng-repeat="record in records | filter:departments_filter | filter:search | orderBy:sorter:reverse")
           %td
+            %img(src="{{record.ident}}")
+          %td
             {{record.name}}
+            %p(ng-show="record.birthdate")
+              {{record.birthdate}}
           %td
             %a(ng-click="departments_filter.department = record.department" href="#") {{ record.department}}
           %td

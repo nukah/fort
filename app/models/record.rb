@@ -10,5 +10,7 @@ class Record
     field :title, type: String
     field :mobile, type: String
     field :active, type: Boolean
+    field :ident, type: String
+    field :birthdate, type: DateTime
 
 end

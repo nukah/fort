@@ -32,3 +32,22 @@ task :user_seed do
     end
   end
 end
+
+desc 'Create identicons for users'
+task :user_idents do
+  ident_dir = File.join(File.dirname(__FILE__), '../', 'public', 'idents')
+  puts "Directory: #{ident_dir}"
+  unless File.directory?(ident_dir)
+    raise StandardError, "Identicon directory doesnt exist: #{ident_dir}"
+  end
+  require 'open-uri'
+  require 'digest/md5'
+  users = Record.where(active: true)
+  users.each { |record|
+    puts "Processing #{record.name}"
+    image = "http://vanillicon.com/#{Digest::MD5.hexdigest(record.name)}_50.png"
+    open(image) { |i| File.open("#{ident_dir}/#{record.id}.png", 'wb') { |f| f.puts i.read }}
+    record.ident = "/idents/#{record.id}.png"
+    record.save
+  }
+end

@@ -39,12 +39,11 @@ class Account
   end
 
   def has_password?(password)
-    ::BCrypt::Password.new(crypted_password) == password
+    OpenSSL::Digest.hexdigest('SHA256', password + Application::Fortification.salt) == crypted_password
   end
-
   private
     def generate_password
-      self.crypted_password = ::BCrypt::Password.create(self.password)
+      self.crypted_password = OpenSSL::Digest.hexdigest('SHA256', self.password + Application::Fortification.salt)
     end
 
     def password_required

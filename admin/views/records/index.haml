@@ -27,8 +27,9 @@
                       =submit_tag pat(:delete), :class =>'list-menu-popover-delete-selected-btn btn btn-danger btn-small'
                       .btn.btn-small.cancel=pat(:cancel)
         %th.header= mat(:record, :name)
+        %th.header= mat(:record, :birthdate)
         %th.header= mat(:record, :mail)
-        %th.header= mat(:record, :departments)
+        %th.header= mat(:record, :department)
         %th.header= mat(:record, :phone)
         %th.header= mat(:record, :title)
         %th.header= mat(:record, :mobile)
@@ -41,6 +42,7 @@
           %td.list-column.list-selectable
             =check_box_tag 'record_ids[]', :value => record.id, :class => 'list-selectable-checkbox'
           %td.list-column=record.name
+          %td.list-column=record.birthdate
           %td.list-column=record.mail
           %td.list-column
             - record.departments.each do |dep|
