@@ -1,8 +1,26 @@
 Application::Admin.controllers :records do
   get :index do
-    @title = "Records"
-    @records = Record.all
     render 'records/index'
+  end
+
+  get :data, map: 'data/records', :provides => :json do
+    records = Record.all.map { |record|
+      record.serializable_hash(only: [:_id, :ident, :birthdate, :name, :mail, :title, :phone, :department, :active])
+    }
+    records.to_json
+  end
+
+  put :update_data, map: 'data/records/:id', :csrf_protection => false do
+    record = Record.find(params[:id])
+    if record
+      if record.update_attributes(params[:record])
+        {success: true}.to_json
+      else
+        {error: 'Operation unavailable.'}.to_json
+      end
+    else
+      {error: "No record found."}.to_json
+    end
   end
 
   get :new do
@@ -35,7 +53,7 @@ Application::Admin.controllers :records do
     end
   end
 
-  put :update, :with => :id do
+  put :update, :with => :id, :csrf_protection => false do
     @title = pat(:update_title, :model => "record #{params[:id]}")
     @record = Record.find(params[:id])
     if @record
@@ -78,9 +96,9 @@ Application::Admin.controllers :records do
     end
     ids = params[:record_ids].split(',').map(&:strip)
     records = Record.find(ids)
-    
+
     if records.each(&:destroy)
-    
+
       flash[:success] = pat(:destroy_many_success, :model => 'Records', :ids => "#{ids.to_sentence}")
     end
     redirect url(:records, :index)

@@ -6,7 +6,9 @@ module Application
     register Padrino::Admin::AccessControl
     register Padrino::Sprockets
     sprockets
-
+    set :protection, true
+    set :protect_from_csrf, true
+    set :allow_disabled_csrf, true
     ##
     # Application configuration options
     #
