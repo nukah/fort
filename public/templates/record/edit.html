@@ -31,5 +31,6 @@
   <input class="form-control" size="25" ng-model="record.mobile" value="record.mobile" ng-show="edit"></input>
 </td>
 <td class="list-column">
-  <span class="glyphicon" ng-class="{'glyphicon-ok': record.active, 'glyphicon-remove': !record.active}"></span>
+  <span ng-hide="edit" class="glyphicon" ng-class="{'glyphicon-ok': record.active, 'glyphicon-remove': !record.active}"></span>
+  <input type="checkbox" ng-model="record.active" checked="{{record.active}}" ng-show="edit">
 </td>
