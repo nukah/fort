@@ -12,8 +12,11 @@ gem 'coffee-script'
 gem 'barista'
 gem 'execjs'
 gem 'tilt'
+gem 'execjs'
 gem 'padrino-sprockets', :require => ['padrino/sprockets'], :git => 'git://github.com/nightsailer/padrino-sprockets.git'
-gem 'therubyracer'
+gem 'rack-contrib', :git => 'https://github.com/rack/rack-contrib.git'
+gem 'gollum'
+#gem 'therubyracer'
 gem 'puma'
 
 # Padrino
@@ -27,7 +30,7 @@ end
 
 group :development, :test do
   gem 'shotgun'
-  gem 'remote_table', git: 'https://github.com/seamusabshere/remote_table'
+#  gem 'remote_table', git: 'https://github.com/seamusabshere/remote_table'
   gem 'rubyzip', '< 1.0.0'
   gem 'guard'
 

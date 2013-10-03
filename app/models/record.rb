@@ -12,5 +12,14 @@ class Record
     field :active, type: Boolean
     field :ident, type: String
     field :birthdate, type: DateTime
+    field :checksum, type: String
+
+  def serialize
+    serializable_hash(only: [:_id, :ident, :birthdate, :name, :mail, :title, :phone, :department, :active])
+  end
+
+  def to_json
+    serialize.to_json
+  end
 
 end

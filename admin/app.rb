@@ -5,9 +5,10 @@ module Application
     register Padrino::Helpers
     register Padrino::Admin::AccessControl
     register Padrino::Sprockets
+    use Rack::PostBodyContentTypeParser
     sprockets
-    set :protection, true
-    set :protect_from_csrf, true
+    set :protection, false
+    set :protect_from_csrf, false
     set :allow_disabled_csrf, true
     ##
     # Application configuration options

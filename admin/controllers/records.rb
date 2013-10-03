@@ -4,17 +4,15 @@ Application::Admin.controllers :records do
   end
 
   get :data, map: 'data/records', :provides => :json do
-    records = Record.all.map { |record|
-      record.serializable_hash(only: [:_id, :ident, :birthdate, :name, :mail, :title, :phone, :department, :active])
-    }
-    records.to_json
+    Record.all.map { |record| record.serialize }.to_json
   end
 
-  put :update_data, map: 'data/records/:id', :csrf_protection => false do
-    record = Record.find(params[:id])
+  put :update_data, map: 'data/records' do
+    puts params
+    record = Record.find(params[:_id])
     if record
-      if record.update_attributes(params[:record])
-        {success: true}.to_json
+      if record.update_attributes(params)
+        record.to_json
       else
         {error: 'Operation unavailable.'}.to_json
       end

@@ -1,19 +1,17 @@
 require './config/boot'
 desc 'Synchronize database with ldap'
 task :sync do
-  puts "Citadel: Synchronizing databases AD < - > Fortification."
+  puts "Citadel: Synchronizing databases AD - > Fortification."
   ldap = Citadel::Backend.new File.expand_path(File.join(__FILE__, '../../', 'config.yml'))
   entries = ldap.get_elements.reject { |entry| entry[:mail].nil? }
   puts "Citadel: Found #{entries.size} records in AD database."
   entries.each do |element|
+    checksum = Digest::MD5.hexdigest(element.map(&:to_s).join)
     record = Record.find_or_create_by(mail: element[:mail])
-    if record.name == nil
-      puts "Citadel: Processing new user #{element["name"]}."
-    else
-      puts "Citadel: Processing existing user #{record.name}."
-    end
+    next if record.checksum == checksum
     updates = element.reject { |k,v| (v.nil? || !Citadel::Connector::ATTRIBUTES.values.include?(k) || record.send(k) == v) }
     puts "Citadel: Updates for #{element["name"]} include -> #{updates}"
+    record.update_attribute(:checksum, checksum)
     record.update_attributes(updates)
     record.save
   end
