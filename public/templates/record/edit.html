@@ -1,0 +1,35 @@
+<td class="list-column">
+  <a class="btn btn-warning" ng-click="editForm()" ng-hide="edit">Edit</a>
+  <a class="btn btn-success" ng-click="saveRecord(record)" ng-show="edit">Save</a>
+</td>
+<td class="list-column">
+  <span ng-hide="edit">{{record.name}}</span>
+  <input class="form-control" size="80" ng-model="record.name" value="record.name" ng-show="edit"></input>
+</td>
+<td class="list-column">
+  <span ng-hide="edit">{{record.birthdate}}</span>
+  <input class="form-control" ng-model="record.birthdate" value="record.birthdate" ng-show="edit"></input>
+</td>
+<td class="list-column">
+  <span ng-hide="edit">{{record.mail}}</span>
+  <input class="form-control" size="60" ng-model="record.mail" value="record.mail" ng-show="edit"></input>
+</td>
+<td class="list-column">
+  <span ng-hide="edit">{{record.department}}</span>
+  <input class="form-control" size="120" ng-model="record.department" value="record.department" ng-show="edit"></input>
+</td>
+<td class="list-column">
+  <span ng-hide="edit">{{record.phone}}</span>
+  <input class="form-control" size="25" ng-model="record.phone" value="record.phone" ng-show="edit"></input>
+</td>
+<td class="list-column">
+  <span ng-hide="edit">{{record.title}}</span>
+  <input class="form-control" size="80" ng-model="record.title" value="record.title" ng-show="edit"></input>
+</td>
+<td class="list-column">
+  <span ng-hide="edit">{{record.mobile}}</span>
+  <input class="form-control" size="25" ng-model="record.mobile" value="record.mobile" ng-show="edit"></input>
+</td>
+<td class="list-column">
+  <span class="glyphicon" ng-class="{'glyphicon-ok': record.active, 'glyphicon-remove': !record.active}"></span>
+</td>

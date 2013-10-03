@@ -1,9 +1,3 @@
-%ul.nav.nav-tabs
-  %li.active=link_to tag_icon(:list, pat(:list)), url(:records, :index)
-  %li=link_to tag_icon(:plus, pat(:new)), url(:records, :new)
-
-  %div.tabs-content(ng-view)
-
 %script(type="text/ng-template" id="records.html")
   %table#list.table.table-striped.table-hover.table-condensed
     %thead
@@ -39,4 +33,24 @@
         %th.header.list-row-action-header
 
     %tbody
-      %tr.list-row(ng-repeat="record in records" record-element ng-model="record")
+      %tr.list-row(ng-repeat="record in records" ng-dblClick="edit=true")
+        %td.list-column(style="width: 60px")
+          %a.btn.btn-warning(ng-show="edit" ng-click="edit=false; saveRecord(record)") Save
+        %td.list-column
+          %span(ng-hide="edit") {{record.name}}
+          %input.form-control(ng-model="record.name" placeholder="record.name" ng-show="edit")
+        %td.list-column
+          %span(ng-hide="edit") {{record.birthdate}}
+          %input.form-control(ng-model="record.birthdate" placeholder="record.birthdate" ng-show="edit")
+        %td.list-column
+          %span {{record.mail}}
+        %td.list-column
+          %span {{record.department}}
+        %td.list-column
+          %span {{record.phone}}
+        %td.list-column
+          %span {{record.title}}
+        %td.list-column
+          %span {{record.mobile}}
+        %td.list-column
+          %span.glyphicon(ng-class="{'glyphicon-ok': record.active, 'glyphicon-remove': !record.active}")
