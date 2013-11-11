@@ -16,8 +16,9 @@ gem 'execjs'
 gem 'padrino-sprockets', :require => ['padrino/sprockets'], :git => 'git://github.com/nightsailer/padrino-sprockets.git'
 gem 'rack-contrib', :git => 'https://github.com/rack/rack-contrib.git'
 gem 'gollum'
-#gem 'therubyracer'
+gem 'therubyracer'
 gem 'puma'
+gem 'unicorn'
 
 # Padrino
 gem 'padrino', git: "https://github.com/padrino/padrino-framework.git"
